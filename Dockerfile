@@ -1,12 +1,7 @@
-FROM debian:latest
+FROM alpine:latest
 
 # Install cpp build tools
-RUN apt-get -y update && apt-get install -y \
-    gcc\
-    g++\ 
-    cmake\
-    libncurses-dev
-    
+RUN apk update && apk add gcc g++ cmake make ncurses-dev libncursesw
 
 ADD ../kcurses /kcurses/
 

@@ -11,4 +11,6 @@ add_executable(kcurses src/main.cpp)
 target_include_directories(kcurses PRIVATE ${CURSES_INCLUDE_DIRS})
 target_link_libraries(kcurses PRIVATE ${CURSES_LIBRARIES})
 
+add_compile_definitions(NCURSES_WIDECHAR=1)
+
 configure_file(wordart.txt wordart.txt COPYONLY)
